@@ -1,0 +1,29 @@
+{
+  "rules": [
+    {
+      "country": "ANY",
+      "passportCountry": "ANY",
+      "travelPurpose": "ANY",
+      "stayDuration": 90,
+
+      "visaRequired": true,
+      "visaType": "NONE",
+      "documentType": ["PASSPORT"],
+      "estimatedProcessingDays": 15,
+      "warnings": []
+    },
+
+    {
+      "country": "INDIA",
+      "passportCountry": "INDIA",
+      "travelPurpose": "BUSINESS",
+      "stayDuration": 30,
+
+      "visaRequired": false,
+      "visaType": "NONE",
+      "documentType": ["PASSPORT", "ID_CARD", "DRIVER_LICENSE"],
+      "estimatedProcessingDays": 0,
+      "warnings": []
+    }
+  ]
+}
