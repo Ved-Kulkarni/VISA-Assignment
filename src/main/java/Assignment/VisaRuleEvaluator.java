@@ -53,7 +53,7 @@ public class VisaRuleEvaluator {
         }
 
         if (matches.isEmpty() || visitingCountry == null || passportCountry == null || travelPurpose == null) {
-            return new VisaDecision(true, VisaType.NONE, new ArrayList<>(), 0, List.of("No matching visa rule found")
+            return new VisaDecision(true, VisaType.UNKNOWN, new ArrayList<>(), 0, List.of("No matching visa rule found")
             );
         }
 
