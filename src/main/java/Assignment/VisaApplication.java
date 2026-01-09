@@ -7,6 +7,21 @@ import java.util.Scanner;
 
 public class VisaApplication {
 
+  private static Country parseCountry(String input){
+    try{
+      return Country.valueOf(input.toUpperCase());
+    } catch (IllegalArgumentException e){
+      return null;
+    }
+  }
+
+    private static TravelPurpose parseTravelPurpose(String input){
+      try{
+        return TravelPurpose.valueOf(input.toUpperCase());
+      } catch (IllegalArgumentException e){
+        return null;
+      }
+    }
   public static void main(String[] args) {
 
     try {
@@ -18,14 +33,14 @@ public class VisaApplication {
       Scanner s = new Scanner(System.in);
 
       System.out.print("Enter destination country : ");
-      Country destinationCountry = Country.valueOf(s.nextLine().toUpperCase());
+      Country destinationCountry = parseCountry(s.nextLine());
 
       System.out.print("Enter passport country : ");
-      Country passportCountry = Country.valueOf(s.nextLine().toUpperCase());
+      Country passportCountry = parseCountry(s.nextLine());
 
       System.out.print("Enter travel purpose : ");
+      TravelPurpose travelPurpose = parseTravelPurpose(s.nextLine());
 
-      TravelPurpose travelPurpose = TravelPurpose.valueOf(s.nextLine().toUpperCase());
       System.out.print("Enter stay duration (days): ");
 
       int stayDuration = s.nextInt();
@@ -42,7 +57,7 @@ public class VisaApplication {
       s.close();
 
     } catch (Exception e) {
-        e.printStackTrace();
+      e.printStackTrace();
       }
   }
 }
